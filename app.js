@@ -2,6 +2,7 @@ const { createInterface } = require('node:readline');
 const { execSync } = require('child_process');
 const fetch = require('node-fetch');
 const { Client, Routes } = require('discord.js');
+const env = require('dotenv').config();
 
 const ping = {
   name: 'ping',
@@ -57,7 +58,7 @@ client.on('interactionCreate', (interaction) => {
 //   console.log('DONE | Application/Bot is up and running. DO NOT CLOSE THIS TAB UNLESS YOU ARE FINISHED USING THE BOT, IT WILL PUT THE BOT OFFLINE.');
 // })();
 
-client.login("MTA3MTcxNTQzMzk4NTYxMzg2NQ.G7-y7z.g43Pw0R6VhXctxX4aJuhpsdmnAOsWBvJDNZm3M").catch((err) => {
+client.login(process.env.TOKEN).catch((err) => {
     throw err
   });
 
